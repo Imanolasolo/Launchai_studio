@@ -237,7 +237,12 @@ def main():
             st.rerun()
         # Dashboards por rol
         if user["role"] == "starter":
-            starter_dashboard(user)
+            try:
+                starter_dashboard(user)
+            except FileNotFoundError as e:
+                st.error("⚠️ Algunos archivos PDF no están disponibles en esta versión.")
+                st.info("Los archivos de formación se están actualizando. Por favor, contacta al administrador.")
+                st.write("Error técnico: Archivos PDF no encontrados en el servidor.")
         elif user["role"] == "pro_builder":
             dashboard_pro_builder(user)
         elif user["role"] == "agency":
