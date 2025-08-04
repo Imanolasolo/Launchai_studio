@@ -4,6 +4,3 @@ numpy
 plotly
 requests
 PyPDF2
-streamlit-pdf-viewer
-pathlib
-os-sys
