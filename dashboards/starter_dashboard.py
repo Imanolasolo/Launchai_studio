@@ -20,7 +20,7 @@ def starter_dashboard(user):
         st.header("Tutoriales")
         st.info("Aquí encontrarás tutoriales introductorios de IA y la plataforma.")
         pdfs = {
-            "Tutorial 1: Dominando la IA": "f:/CODECODIX/Codecodix_AI_Lab/LaunchAI_studio/courses/Dominando la IA.pdf",
+            "Tutorial 1: Dominando la IA": "Modulo1_AgenciaIA.pdf",
             "Tutorial 2: Estrategias avanzadas de IA": "f:/CODECODIX/Codecodix_AI_Lab/LaunchAI_studio/courses/Estrategias avanzadas de IA.pdf"
         }
         selected_pdf = st.selectbox("Selecciona un tutorial para leer:", list(pdfs.keys()))
