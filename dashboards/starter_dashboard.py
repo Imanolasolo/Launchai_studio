@@ -21,10 +21,10 @@ def starter_dashboard(user):
         st.info("Aquí encontrarás tutoriales introductorios de IA y la plataforma.")
         pdfs = {
             "Tutorial 1: Dominando la IA": "courses/Dominando la IA.pdf",
-            "Tutorial 2: Estrategias avanzadas de IA": "assets/pdfs/Estrategias avanzadas de IA.pdf"
+            "Tutorial 2: Estrategias avanzadas de IA": "courses/Estrategias avanzadas de IA.pdf"
         }
         selected_pdf = st.selectbox("Selecciona un tutorial para leer:", list(pdfs.keys()))
-        if st.button("Ver PDF"):
+        if st.button("Ver PDF/ En caso de no poder ver descargar el PDF a continuaciòn"):
             with open(pdfs[selected_pdf], "rb") as f:
                 pdf_bytes = f.read()
                 st.download_button(
