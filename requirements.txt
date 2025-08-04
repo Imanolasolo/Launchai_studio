@@ -4,3 +4,4 @@ numpy
 plotly
 requests
 PyPDF2
+base64

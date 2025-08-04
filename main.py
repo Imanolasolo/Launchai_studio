@@ -55,7 +55,7 @@ def dashboard_admin(user):
                 )
                 conn.commit()
                 st.success("Usuario creado correctamente.")
-                st.experimental_rerun()
+                st.rerun()
             except Exception as e:
                 st.error("Error al crear usuario. ¿Usuario ya existe?")
 
@@ -91,7 +91,7 @@ def dashboard_admin(user):
                             )
                         conn.commit()
                         st.success("Usuario actualizado.")
-                        st.experimental_rerun()
+                        st.rerun()
                     except Exception:
                         st.error("Error al actualizar usuario.")
             with col2:
@@ -100,7 +100,7 @@ def dashboard_admin(user):
                         cursor.execute("DELETE FROM users WHERE id=?", (selected[0],))
                         conn.commit()
                         st.success("Usuario eliminado.")
-                        st.experimental_rerun()
+                        st.rerun()
                     except Exception:
                         st.error("Error al eliminar usuario.")
     conn.close()
@@ -237,12 +237,7 @@ def main():
             st.rerun()
         # Dashboards por rol
         if user["role"] == "starter":
-            try:
-                starter_dashboard(user)
-            except FileNotFoundError as e:
-                st.error("⚠️ Algunos archivos PDF no están disponibles en esta versión.")
-                st.info("Los archivos de formación se están actualizando. Por favor, contacta al administrador.")
-                st.write("Error técnico: Archivos PDF no encontrados en el servidor.")
+            starter_dashboard(user)
         elif user["role"] == "pro_builder":
             dashboard_pro_builder(user)
         elif user["role"] == "agency":
